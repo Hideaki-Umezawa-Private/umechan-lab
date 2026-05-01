@@ -383,3 +383,5 @@ Clipyを使うと、過去にコピーしたテキストを履歴から呼び出
 
 AppCleaner
 https://freemacsoft.net/appcleaner/
+
+brew install --cask rectangle
