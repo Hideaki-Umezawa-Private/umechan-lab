@@ -266,33 +266,6 @@ user.email=your-email@example.com
 
 ---
 
-## 7. 開発用ディレクトリの作成
-
-開発用リポジトリをまとめて管理するため、ホームディレクトリ配下に `work` ディレクトリを作成した。
-
-### 実行コマンド
-
-```bash
-mkdir ~/work
-cd ~/work
-pwd
-```
-
-### ディレクトリ構成イメージ
-
-```text
-~/work
-├── umechan-lab
-├── private-app
-└── practice
-```
-
-### 補足
-
-`~/work` を開発用の親ディレクトリとして使うことで、GitHubからcloneしたリポジトリや個人開発プロジェクトを整理しやすくなる。
-
----
-
 
 ## 8. Warp のインストール
 
