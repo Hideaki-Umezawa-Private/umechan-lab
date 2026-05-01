@@ -380,3 +380,6 @@ Clipyを使うと、過去にコピーしたテキストを履歴から呼び出
 今回のセットアップにより、新しいMacBook Proで開発を始めるための基本環境が整った。
 
 特に、Homebrew、Git、nvm、Node.js、GitHub SSH認証、Gitユーザー情報設定まで完了しているため、JavaScript / React系の開発やGitHub連携はすぐに開始できる状態になっている。
+
+AppCleaner
+https://freemacsoft.net/appcleaner/
