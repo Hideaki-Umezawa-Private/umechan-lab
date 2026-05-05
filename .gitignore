@@ -17,6 +17,11 @@ node_modules/
 dist/
 build/
 coverage/
+public/
+
+# Qiita CLI local credentials
+credentials.json
+.qiita/
 
 # SSH / keys / certificates
 .ssh/

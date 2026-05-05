@@ -1,0 +1,38 @@
+name: Publish Qiita Articles
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "logs/**/*.md"
+      - "qiita.config.json"
+      - ".github/workflows/publish-qiita.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepare Qiita public directory
+        run: |
+          rm -rf public
+          mkdir -p public
+          cp logs/*.md public/
+
+      - uses: increments/qiita-cli/actions/publish@v1
+        with:
+          qiita-token: ${{ secrets.QIITA_TOKEN }}
+          root: "."
