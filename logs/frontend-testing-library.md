@@ -72,7 +72,7 @@ expect(screen.getByRole('textbox', { name: 'メールアドレス' })).toBeInThe
 | `<ul>` / `<ol>` | `list` |
 | `<li>` | `listitem` |
 
-`input type="password"` には暗黙の `textbox` role がないため、`getByLabelText` を使うのが実務上わかりやすいです。
+`input type="password"` には暗黙の `textbox` role がありません。そのため、パスワード入力欄は `getByLabelText` で取得すると意図が伝わりやすいです。
 
 ## `within` で検索範囲を絞る
 
@@ -84,6 +84,8 @@ const player = within(list).getByLabelText(playerId)
 
 expect(within(player).getByRole('img', { name: 'camera' })).toBeInTheDocument()
 ```
+
+例えば一覧の中に同じボタンが複数ある場合でも、対象の行やカードを先に選ぶと、意図した要素だけを安全に取得できます。
 
 ## `userEvent` と `fireEvent`
 
@@ -115,7 +117,3 @@ try {
 ```
 
 タイマーを進めることとReactの再描画が完了することは別です。DOM反映まで待ちたい場合は、`findBy...` や `waitFor` を併用します。
-
-## 検証メモ
-
-この記事では、Notionの学習メモをもとに、Testing Library公式ドキュメントのクエリ優先度と `ByRole` の仕様に合わせて内容を整理しました。Notionに含まれていた一時署名付き画像URLは、公開に不向きなため掲載していません。
